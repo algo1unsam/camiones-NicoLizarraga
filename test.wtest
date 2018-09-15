@@ -1,0 +1,10 @@
+import camion.*
+import empresaDeTransporte.*
+import deposito.*
+
+test "agregarle una carga al camion" {
+	
+	camion.ingresaCarga(knightRider)
+	assert.that(camion.camion().contains(knightRider))
+}
+
