@@ -1,14 +1,18 @@
 import empresaDeTransporte.*
 import camion.*
+import container.*
+
 
 object deposito {
-	var cargamento = []
 	var deposito = []
+	var property cargamento = [bumblebee, knightRider, paqueteDeLadrillos]
+	var property motoneta = []
 	
-	method cargamento(algo){
-		cargamento.add(algo)
+	method llegaCargaSimple(algo){
+		deposito.add(algo)
 	}
-	method llegaCarga(){
+		
+	method llegaCargaCompuesta(){
 		deposito.addAll(cargamento)
 	}
 	method llenarCamion(){

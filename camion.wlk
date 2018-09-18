@@ -12,7 +12,7 @@ object camion {
 	
 	method quitaCarga(algo) = camion.removeAll([algo])
 	
-	method queCargaTiene() = camion
+	method queCargaTiene(algo) = camion.contains(algo) //MODIFICADO
 	
 	method cargaMaxima() = cargaMaxima
 	
@@ -27,6 +27,8 @@ object camion {
 	method cargaMasPeligrosa() = (camion.max({carga => carga.peligrosidad()}))
 	
 	method circulaXruta() = self.cargaMasPeligrosa().peligrosidad() < ruta.dangerous()
+	
+	method modificaCarga(algo) = self.quitaCarga(algo)
 	
 	
 }

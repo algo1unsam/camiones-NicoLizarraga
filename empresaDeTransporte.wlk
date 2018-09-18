@@ -1,6 +1,6 @@
 import camion.*
-import empresaDeTransporte.*
 import deposito.*
+import container.*
 
 object knightRider {
 	
@@ -39,14 +39,17 @@ object motoneta{
 	var motoneta = []
 	
 	method ingresaCarga(algo){
-		if ((algo.peso() <= 100) and (algo.peligrosidad() < 5))
+		if ((algo.peso() <= 100) and (algo.peligrosidad() <= 5))
 		motoneta.add(algo)
 		else
 		"La motoneta no tolera la carga"
 	}
-	
-	
-	
 }
 
-
+object embalaje{
+	var property objetoCubierto = null
+	
+	method peso() = objetoCubierto.peso()
+	
+	method peligrosidad() = objetoCubierto.peligrosidad() / 2
+}

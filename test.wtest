@@ -1,6 +1,7 @@
 import camion.*
 import empresaDeTransporte.*
 import deposito.*
+import container.*
 
 test "agregarle una carga al camion" {
 	
@@ -8,3 +9,20 @@ test "agregarle una carga al camion" {
 	assert.that(camion.camion().contains(knightRider))
 }
 
+test "Corroborar de que cada ladrillo pese 2kg"{
+	
+	paqueteDeLadrillos.cantLadrillos(2000)
+	assert.equals(4000, paqueteDeLadrillos.peso())
+}
+
+test "Eliminar a bumblebee del camion"{
+	
+	bumblebee.transformer(auto)
+	camion.ingresaCarga(bumblebee)
+	camion.ingresaCarga(knightRider)
+	camion.quitaCarga(bumblebee)
+	assert.notThat(camion.camion().contains(bumblebee))
+	
+}
+
+// FALTAN TESTS
