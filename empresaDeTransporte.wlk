@@ -26,6 +26,7 @@ object robot{
 }
 
 object paqueteDeLadrillos{
+	// TODO acá te tira un warning porque le falta una inicialización
 	var property cantLadrillos
 	var pesoXladrillo = 2
 	
@@ -38,6 +39,9 @@ object paqueteDeLadrillos{
 object motoneta{
 	var motoneta = []
 	
+	// TODO el else no hace falta, para qué? sería mas correcto que tire un excpetión
+	// o false
+	// return (algo.peso() <= 100) and (algo.peligrosidad() <= 5)
 	method ingresaCarga(algo){
 		if ((algo.peso() <= 100) and (algo.peligrosidad() <= 5))
 		motoneta.add(algo)
